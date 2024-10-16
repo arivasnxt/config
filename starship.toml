@@ -75,9 +75,11 @@ contexts = [
 ]
 
 [aws]
-format = "on[$profile $symbol]($style) "
+# format = 'on [$profile \($symbol $duration\)]($style)'
+format = 'on [$profile $symbol]($style)'
 symbol = "☁️ "
 style = "bold fg:208"
+expiration_symbol="💤"
 [aws.region_aliases]
 us-east-1 = "N. Virginia"
 us-east-2 = "Ohio"
@@ -135,14 +137,15 @@ disabled = false
 "~/workspace/personal/GitLab" = "gitlab.com"
 
 [git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
 symbol = " " #"🌱 "
-truncation_length = 50
+truncation_length = 40
 style = "bold purple"
 
 [git_commit]
 only_detached = false
 commit_hash_length = 7
-format = "[ $hash $tag]($style)"
+format = "[ $hash]($style)"
 style = "bold purple"
 tag_disabled = false
 tag_symbol = " "
@@ -168,6 +171,7 @@ merge = "[MERGING 🔀](bold yellow)"
 rebase = "[REBASING 🔀](bold yellow)"
 
 [nodejs]
+format = '[$symbol($version )]($style)'
 symbol = "⬢ "
 
 [java]
@@ -175,6 +179,7 @@ format = "[$symbol$version]($style) "
 style = "red"
 
 [package]
+format = '[$symbol$version]($style) '
 style = "bold red"
 
 [python]
@@ -192,3 +197,4 @@ format = "[$symbol]($style) "
 disabled = false
 format = "[$time]($style)"
 time_format = "%T"
+

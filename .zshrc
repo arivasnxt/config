@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
+zstyle ':omz:plugins:nvm' lazy yes
+zstyle ':omz:plugins:nvm' autoload yes
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export KUBE_EDITOR='code --wait'
@@ -111,6 +114,8 @@ export NVM_DIR="$HOME/.nvm"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export NVM_HOMEBREW="/opt/homebrew/opt/nvm"
 
 eval "$(starship init zsh)"
 
